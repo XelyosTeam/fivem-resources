@@ -1,5 +1,7 @@
 # Xelyos resources for FiveM
 
+<center>
+
 [![](https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white)](https://xelyos.fr/discord)
 [![](https://img.shields.io/badge/website-000000?style=for-the-badge&logo=About.me&logoColor=white)](https://xelyos.fr/)
 [![](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Tvpirates)
@@ -9,6 +11,8 @@
 ![](https://img.shields.io/github/forks/Tvpirates/xelyos-fivem-resources.svg)
 ![](https://img.shields.io/github/stars/Tvpirates/xelyos-fivem-resources.svg)
 ![](https://img.shields.io/github/watchers/Tvpirates/xelyos-fivem-resources.svg)
+
+</center>
 
 **Discord :** [Discord Invite](https://xelyos.fr/discord)
 
