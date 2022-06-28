@@ -109,7 +109,7 @@ function MailRP:addSubdomain(callBack, name, public, manager, carnet)
 end
 
 -- Envoyer un mail
-function MailRP:send(callBack, from, to, subject, content, confirmOpened, attachements)
+function MailRP:send(callBack, from, to, subject, content, confirmOpened, attachments)
     if from == nil then
         error('Sender email is required !')
     end
@@ -152,20 +152,20 @@ function MailRP:send(callBack, from, to, subject, content, confirmOpened, attach
         data.confirmOpened = confirmOpened
     end
 
-    if attachements and type(attachements) ~= 'table' then
-        error('attachements must be a string or an array (table) and not ' .. type(attachements))
-    elseif attachements and #attachements > 0 then
-        local tempAttachements = {}
-        for k in pairs(attachements) do
-            if type(attachements[k]) ~= 'string' and type(attachements[k]) ~= 'table' then
-                error('value in attachements must be a string or an array (table) and not ' .. type(attachements[k]))
+    if attachments and type(attachments) ~= 'table' then
+        error('attachments must be a string or an array (table) and not ' .. type(attachments))
+    elseif attachments and #attachments > 0 then
+        local tempAttachments = {}
+        for k in pairs(attachments) do
+            if type(attachments[k]) ~= 'string' and type(attachments[k]) ~= 'table' then
+                error('value in attachments must be a string or an array (table) and not ' .. type(attachments[k]))
             else
-                table.insert(tempAttachements, attachements[k])
+                table.insert(tempAttachments, attachments[k])
             end
         end
 
-        if #tempAttachements > 0 then
-            data.attachements = tempAttachements
+        if #tempAttachments > 0 then
+            data.attachments = tempAttachments
         end
     end
 
