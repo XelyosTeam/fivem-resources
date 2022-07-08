@@ -41,6 +41,7 @@ ensure mailrp
 * **Wiki :** [https://wiki.xelyos.fr/books/api-mail-rp](https://wiki.xelyos.fr/books/api-mail-rp) for more information
   on how resources work
 * **Discord :** [Discord Invite](https://mail-rp.com/discord)
+* **Version :** 1.0.0
 
 ---
 

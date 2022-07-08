@@ -45,11 +45,11 @@ function MailRP:getServer(callBack)
 end
 
 -- Récupérer un sous domaine
-function MailRP:getSubdomain(callBack, name)
+function MailRP:findSubdomain(callBack, name)
     if name == nil then
         self:__sendGetRequest('subdomains', callBack)
     else
-        if type(name) ~= string then
+        if type(name) ~= 'string' then
             error('name attribut must be a string')
         end
 
@@ -57,13 +57,13 @@ function MailRP:getSubdomain(callBack, name)
             error('The callBack must be a function and not ' .. type(callBack))
         end
 
-        self:__sendGetRequest('server/' .. name, callBack)
+        self:__sendGetRequest('subdomains/' .. name, callBack)
     end
 end
 
 -- Récupérer la liste des sous domaines
-function MailRP:getSubdomains(callBack)
-    self:getSubdomain(callBack)
+function MailRP:findSubdomains(callBack)
+    self:findSubdomain(callBack)
 end
 
 -- Ajouter un sous domaine
@@ -109,7 +109,7 @@ function MailRP:addSubdomain(callBack, name, public, manager, carnet)
 end
 
 -- Envoyer un mail
-function MailRP:send(callBack, from, to, subject, content, confirmOpened, attachments)
+function MailRP:sendEmail(callBack, from, to, subject, content, confirmOpened, attachments)
     if from == nil then
         error('Sender email is required !')
     end
@@ -173,7 +173,7 @@ function MailRP:send(callBack, from, to, subject, content, confirmOpened, attach
         error('The callBack must be a function and not ' .. type(callBack))
     end
 
-    self:__sendPostRequest(self, 'mail/send', data, callBack)
+    self:__sendPostRequest('mail/send', data, callBack)
 end
 
 function MailRP:addAddress(callBack, name, firstname, email, password)
@@ -204,10 +204,10 @@ function MailRP:addAddress(callBack, name, firstname, email, password)
         password = password,
     }
 
-    self:__sendPostRequest(self, 'address/create', data, callBack)
+    self:__sendPostRequest('address/create', data, callBack)
 end
 
-function MailRP:getAddress(callBack, email)
+function MailRP:findAddress(callBack, email)
     if email == nil then
         error('email param is required !')
     end
@@ -223,7 +223,7 @@ function MailRP:getAddress(callBack, email)
     self:__sendGetRequest('address/get/' .. email, callBack)
 end
 
-RegisterNetEvent("xelyos:MailRP") -- For opening the emote menu from another resource.
+RegisterNetEvent("xelyos:MailRP") -- For using the class from another resource.
 AddEventHandler("xelyos:MailRP", function(cb)
     cb(MailRP:new())
 end)
