@@ -44,7 +44,7 @@ function MailRP:getServer(callBack)
     self:__sendGetRequest('server', callBack)
 end
 
--- Récupérer un sous domaine
+-- Récupérer un domaine
 function MailRP:findSubdomain(callBack, name)
     if name == nil then
         self:__sendGetRequest('subdomains', callBack)
@@ -61,12 +61,12 @@ function MailRP:findSubdomain(callBack, name)
     end
 end
 
--- Récupérer la liste des sous domaines
+-- Récupérer la liste des domaines
 function MailRP:findSubdomains(callBack)
     self:findSubdomain(callBack)
 end
 
--- Ajouter un sous domaine
+-- Ajouter un domaine
 function MailRP:addSubdomain(callBack, name, public, manager, carnet)
     if name == nil then
         error('name is required !')
